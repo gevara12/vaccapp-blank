@@ -1,3 +1,4 @@
+import { ComponentBlocks } from "./components/ComponentBlocks";
 import {
   collection,
   config,
@@ -6,7 +7,6 @@ import {
   LocalConfig,
   singleton,
 } from "@keystatic/core";
-import { ComponentBlocks } from "./components/ComponentBlocks";
 
 const storage: LocalConfig["storage"] | GitHubConfig["storage"] =
   process.env.NODE_ENV === "development"
@@ -89,6 +89,19 @@ export default config({
             label: "Title",
           },
         }),
+        infection: fields.text({
+          label: "Инфекция",
+        }),
+        vaccines: fields.array(
+          fields.relationship({
+            label: "Infection vaccine",
+            collection: "vaccines",
+          }),
+          {
+            label: "Вакцины",
+            itemLabel: (props) => props.value || "Please select a vaccine",
+          }
+        ),
         summary: fields.text({
           label: "Summary",
           validation: { length: { min: 4 } },
@@ -123,6 +136,33 @@ export default config({
           ],
           label: "Content",
           componentBlocks: ComponentBlocks,
+        }),
+      },
+    }),
+    vaccines: collection({
+      label: "Вакцины",
+      path: "content/vaccines/*",
+      slugField: "name",
+      schema: {
+        name: fields.slug({
+          name: {
+            label: "Название",
+            validation: {
+              length: {
+                min: 1,
+              },
+            },
+          },
+        }),
+        firstVaccination: fields.text({
+          label: "Первая вакцинация",
+        }),
+        secondVaccination: fields.text({
+          label: "Вторая вакцинация",
+        }),
+        avatar: fields.image({
+          label: "Author avatar",
+          directory: "public/images/authors",
         }),
       },
     }),

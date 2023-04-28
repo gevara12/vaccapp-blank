@@ -6,6 +6,7 @@ const reader = createReader("", config);
 
 const getPostData = async () => {
   const postSlugs = await reader.collections.posts.list();
+
   return await Promise.all(
     postSlugs.map(async (slug) => {
       const post = await reader.collections.posts.read(slug);
@@ -22,6 +23,7 @@ const getPostData = async () => {
 export default async function posts(req: NextApiRequest, res: NextApiResponse) {
   const resData = await getPostData();
 
-  console.log(JSON.stringify(resData, null, 2));
+  // console.log(JSON.stringify(resData, null, 2));
   res.status(200).json(resData);
+  res.end();
 }

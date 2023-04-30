@@ -10,10 +10,13 @@ const getPostData = async () => {
   return await Promise.all(
     postSlugs.map(async (slug) => {
       const post = await reader.collections.posts.read(slug);
-      const content = (await post?.content()) || [];
+      const contraindications = (await post?.contraindications()) || [];
+      const reactionsAndComplications =
+        (await post?.reactionsAndComplications()) || [];
       return {
         ...post,
-        content,
+        contraindications,
+        reactionsAndComplications,
         slug,
       };
     })

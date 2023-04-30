@@ -1,4 +1,5 @@
 import { ComponentBlocks } from "./components/ComponentBlocks";
+import { makeId } from "./utils/makeId";
 import {
   collection,
   config,
@@ -80,17 +81,14 @@ export default config({
       },
     }),
     posts: collection({
-      label: "Posts",
+      label: "Инфекции",
       path: "content/posts/*/",
       slugField: "title",
       schema: {
         title: fields.slug({
           name: {
-            label: "Title",
+            label: "Название",
           },
-        }),
-        infection: fields.text({
-          label: "Инфекция",
         }),
         vaccines: fields.array(
           fields.relationship({
@@ -102,29 +100,29 @@ export default config({
             itemLabel: (props) => props.value || "Please select a vaccine",
           }
         ),
-        summary: fields.text({
-          label: "Summary",
-          validation: { length: { min: 4 } },
-        }),
-        publishedDate: fields.date({ label: "Published Date" }),
-        coverImage: fields.image({
-          label: "Image",
-          directory: "public/images/posts",
-        }),
-        wordCount: fields.integer({
-          label: "Word count",
-        }),
-        authors: fields.array(
-          fields.relationship({
-            label: "Post author",
-            collection: "authors",
-          }),
-          {
-            label: "Authors",
-            itemLabel: (props) => props.value || "Please select an author",
-          }
-        ),
-        content: fields.document({
+        // summary: fields.text({
+        //   label: "Summary",
+        //   validation: { length: { min: 4 } },
+        // }),
+        // publishedDate: fields.date({ label: "Published Date" }),
+        // coverImage: fields.image({
+        //   label: "Image",
+        //   directory: "public/images/posts",
+        // }),
+        // wordCount: fields.integer({
+        //   label: "Word count",
+        // }),
+        // authors: fields.array(
+        //   fields.relationship({
+        //     label: "Post author",
+        //     collection: "authors",
+        //   }),
+        //   {
+        //     label: "Authors",
+        //     itemLabel: (props) => props.value || "Please select an author",
+        //   }
+        // ),
+        contraindications: fields.document({
           formatting: true,
           dividers: true,
           links: true,
@@ -134,9 +132,23 @@ export default config({
             [2, 1],
             [1, 2, 1],
           ],
-          label: "Content",
+          label: "Противопоказания",
           componentBlocks: ComponentBlocks,
         }),
+        reactionsAndComplications: fields.document({
+          formatting: true,
+          dividers: true,
+          links: true,
+          layouts: [
+            [1, 1],
+            [1, 1, 1],
+            [2, 1],
+            [1, 2, 1],
+          ],
+          label: "Возможные реакции и осложнения",
+          componentBlocks: ComponentBlocks,
+        }),
+        id: fields.text({ defaultValue: makeId(5), label: "ID" }),
       },
     }),
     vaccines: collection({

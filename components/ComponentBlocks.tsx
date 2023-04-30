@@ -1,13 +1,12 @@
-import { component, fields } from "@keystatic/core";
-
 import Banner from "./Banner";
-import InlineCTA from "./InlineCTA";
 import Divider from "./Divider";
-import YouTubeEmbed from "./YouTubeEmbed";
-import TweetEmbed from "./TweetEmbed";
-import LoopingVideo from "./LoopingVideo";
 import Image from "./Image";
+import InlineCTA from "./InlineCTA";
+import LoopingVideo from "./LoopingVideo";
 import Testimonial from "./Testimonial";
+import TweetEmbed from "./TweetEmbed";
+import YouTubeEmbed from "./YouTubeEmbed";
+import { component, fields } from "@keystatic/core";
 
 export const ComponentBlocks = {
   divider: component({
@@ -32,7 +31,7 @@ export const ComponentBlocks = {
     ),
     schema: {
       title: fields.text({ label: "Title" }),
-      summary: fields.text({ label: "Summary" }),
+      // summary: fields.text({ label: "Summary" }),
       linkLabel: fields.text({ label: "Link Label" }),
       href: fields.url({ label: "Link" }),
       externalLink: fields.checkbox({

@@ -52,7 +52,8 @@ async function getPostData() {
   const postData = await Promise.all(
     postSlugs.map(async (slug) => {
       const post = await reader.collections.posts.read(slug);
-      const content = (await post?.content()) || [];
+      console.log(  'post',post)
+      const content = (await post?.reactionsAndComplications()) || [];
       return {
         ...post,
         content,

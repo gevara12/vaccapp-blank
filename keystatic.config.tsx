@@ -167,7 +167,7 @@ export default config({
           },
         }),
         firstVaccination: fields.text({
-          label: "Первая вакцинация",
+          label: "Возраст 1",
         }),
         secondVaccination: fields.text({
           label: "Вторая вакцинация",

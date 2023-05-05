@@ -1,4 +1,5 @@
 name: БЦЖ-М
+isAnimate: animate
 firstVaccination: ''
 secondVaccination: ''
 avatar: null

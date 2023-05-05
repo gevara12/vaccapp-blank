@@ -1,4 +1,5 @@
 name: АД-М
+isAnimate: animate
 firstVaccination: ''
 secondVaccination: ''
 avatar: null

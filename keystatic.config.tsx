@@ -97,9 +97,10 @@ export default config({
           }),
           {
             label: "Вакцины",
-            itemLabel: (props) => props.value || "Please select a vaccine",
+            itemLabel: (props) => props?.value || "Выберите вакцину",
           }
         ),
+
         // summary: fields.text({
         //   label: "Summary",
         //   validation: { length: { min: 4 } },
@@ -130,10 +131,11 @@ export default config({
             [1, 1],
             [1, 1, 1],
             [2, 1],
+            [1, 2],
             [1, 2, 1],
           ],
           label: "Противопоказания",
-          componentBlocks: ComponentBlocks,
+          // componentBlocks: ComponentBlocks,
         }),
         reactionsAndComplications: fields.document({
           formatting: true,
@@ -165,6 +167,14 @@ export default config({
               },
             },
           },
+        }),
+        isAnimate: fields.select({
+          label: "Вид вакцины",
+          options: [
+            { value: "animate", label: "Живая" },
+            { value: "inanimate", label: "Неживая" },
+          ],
+          defaultValue: "inanimate",
         }),
         firstVaccination: fields.text({
           label: "Возраст 1",

@@ -1,4 +1,5 @@
 name: Паротитная моновакцина
+isAnimate: animate
 firstVaccination: ''
 secondVaccination: ''
 avatar: null

@@ -1,4 +1,5 @@
 name: РотаТек
+isAnimate: animate
 firstVaccination: ''
 secondVaccination: ''
 avatar: null

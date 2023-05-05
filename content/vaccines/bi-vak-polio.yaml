@@ -1,4 +1,5 @@
 name: БиВак полио
+isAnimate: animate
 firstVaccination: ''
 secondVaccination: ''
 avatar: null

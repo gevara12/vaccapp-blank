@@ -1,3 +1,6 @@
 title: Гемофильная  инфекция типа b (Hib)
-vaccines: []
-id: 3HlVl
+vaccines:
+  - vakczina-gemofilnaya
+  - pentaksim
+  - infanriks-geksa
+id: a$10$NndsI3KkCHeUptyhZLEIVuLsqkR53oJMfwuhdSHHtlWyF72UrU5va

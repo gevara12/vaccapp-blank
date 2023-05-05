@@ -1,4 +1,5 @@
 name: Коревая моновакцина
+isAnimate: animate
 firstVaccination: ''
 secondVaccination: ''
 avatar: null

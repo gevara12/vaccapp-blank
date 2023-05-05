@@ -1,4 +1,5 @@
 name: Вактривир
+isAnimate: animate
 firstVaccination: ''
 secondVaccination: ''
 avatar: null

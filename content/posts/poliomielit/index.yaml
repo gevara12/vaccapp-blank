@@ -1,3 +1,8 @@
 title: Полиомиелит
-vaccines: []
-id: 3HlVl
+vaccines:
+  - bi-vak-polio
+  - mono-vak-polio
+  - pentaksim
+  - infanriks-geksa
+  - polimileks
+id: YQ25nXMPWIsBwHZzcIM

@@ -1,3 +1,11 @@
 title: Сезонный грипп
-vaccines: []
-id: 3HlVl
+vaccines:
+  - flyu-m
+  - flyu-m-tetra
+  - vaksigrip-tetra
+  - ultriks-kvadri
+  - grippol-plyus
+  - grippol-kvadrivalent
+  - sovigripp
+  - inflyuvak
+id: 1m2yrtOowHsSOu

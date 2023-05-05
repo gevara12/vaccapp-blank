@@ -1,3 +1,6 @@
 title: Менингококковая инфекция
-vaccines: []
-id: 3HlVl
+vaccines:
+  - menaktra
+  - meningo-vak-a-s
+  - meningokokkovaya-vakczina-gruppy-a
+id: x2gfmlVRD

@@ -1,3 +1,6 @@
 title: Гепатит А
-vaccines: []
-id: 3HlVl
+vaccines:
+  - algavak-m
+  - algavak
+  - havriks
+id: 48bd4fe9CRC32

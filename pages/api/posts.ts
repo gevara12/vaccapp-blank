@@ -10,11 +10,25 @@ const getPostData = async () => {
   return await Promise.all(
     postSlugs.map(async (slug) => {
       const post = await reader.collections.posts.read(slug);
+
+      const vaccinesData = post
+        ? await Promise.all(
+            post.vaccines.map(async (vaccineSlug) => {
+              const vaccine = await reader.collections.vaccines.read(
+                vaccineSlug || ""
+              );
+              return { ...vaccine, slug: vaccineSlug };
+            })
+          )
+        : [];
+
       const contraindications = (await post?.contraindications()) || [];
       const reactionsAndComplications =
         (await post?.reactionsAndComplications()) || [];
+
       return {
         ...post,
+        vaccines: vaccinesData,
         contraindications,
         reactionsAndComplications,
         slug,

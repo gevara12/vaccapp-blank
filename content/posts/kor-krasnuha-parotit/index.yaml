@@ -1,3 +1,9 @@
 title: Корь,  краснуха, паротит
-vaccines: []
-id: 3HlVl
+vaccines:
+  - korevaya-monovakczina
+  - krasnushnaya-monovakczina
+  - parotitnaya-monovakczina
+  - parotitno-korevaya-divakczina
+  - vaktrivir
+  - m-m-r-ii
+id: VRDrZ6M4utEFTviJynRWeP5SZBcoUX6

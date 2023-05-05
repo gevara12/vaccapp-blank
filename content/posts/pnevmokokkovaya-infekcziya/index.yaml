@@ -1,3 +1,7 @@
 title: Пневмококковая инфекция
-vaccines: []
-id: 3HlVl
+vaccines:
+  - sinfloriks
+  - prevenar-13
+  - pnemoteks
+  - pnevmovaks-23
+id: OZvmV0cEWD8Nn

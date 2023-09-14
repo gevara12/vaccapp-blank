@@ -1,8 +1,9 @@
-import config from "../../keystatic.config";
-import { createReader } from "@keystatic/core/reader";
-import { NextApiRequest, NextApiResponse } from "next";
+import { createReader } from '@keystatic/core/reader';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-const reader = createReader("", config);
+import config from '../../keystatic.config';
+
+const reader = createReader('', config);
 
 const getPostData = async () => {
   const postSlugs = await reader.collections.posts.list();
@@ -13,27 +14,27 @@ const getPostData = async () => {
 
       const vaccinesData = post
         ? await Promise.all(
-            post.vaccines.map(async (vaccineSlug) => {
+            Array.from(post.vaccines, async (vaccineSlug) => {
               const vaccine = await reader.collections.vaccines.read(
-                vaccineSlug || ""
+                vaccineSlug || '',
               );
               return { ...vaccine, slug: vaccineSlug };
-            })
+            }),
           )
         : [];
 
-      const contraindications = (await post?.contraindications()) || [];
+      console.log('pppost', post);
+
       const reactionsAndComplications =
         (await post?.reactionsAndComplications()) || [];
 
       return {
         ...post,
         vaccines: vaccinesData,
-        contraindications,
         reactionsAndComplications,
         slug,
       };
-    })
+    }),
   );
 };
 
@@ -42,5 +43,12 @@ export default async function posts(req: NextApiRequest, res: NextApiResponse) {
 
   // console.log(JSON.stringify(resData, null, 2));
   res.status(200).json(resData);
+
   res.end();
+  // const data = await JSON.stringify(resData);
+  // return {
+  //   props: {
+  //     posts: data,
+  //   },
+  // };
 }

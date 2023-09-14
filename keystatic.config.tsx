@@ -80,20 +80,20 @@ export default config({
           },
         ),
 
-        // contraindications: fields.document({
-        //   formatting: true,
-        //   dividers: true,
-        //   links: true,
-        //   layouts: [
-        //     [1, 1],
-        //     [1, 1, 1],
-        //     [2, 1],
-        //     [1, 2],
-        //     [1, 2, 1],
-        //   ],
-        //   label: 'Противопоказания',
-        //   // componentBlocks: ComponentBlocks,
-        // }),
+        contraindications: fields.document({
+          formatting: true,
+          dividers: true,
+          links: true,
+          layouts: [
+            [1, 1],
+            [1, 1, 1],
+            [2, 1],
+            [1, 2],
+            [1, 2, 1],
+          ],
+          label: 'Противопоказания',
+          // componentBlocks: ComponentBlocks,
+        }),
         reactionsAndComplications: fields.document({
           formatting: true,
           dividers: true,

@@ -23,15 +23,16 @@ const getPostData = async () => {
           )
         : [];
 
-      console.log('pppost', post);
-
       const reactionsAndComplications =
         (await post?.reactionsAndComplications()) || [];
+
+      const contraindications = (await post?.contraindications()) || [];
 
       return {
         ...post,
         vaccines: vaccinesData,
         reactionsAndComplications,
+        contraindications,
         slug,
       };
     }),

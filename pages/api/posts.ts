@@ -1,9 +1,14 @@
 import { createReader } from '@keystatic/core/reader';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import config from '../../keystatic.config';
+import configKeystatic from '../../keystatic.config';
 
-const reader = createReader('', config);
+export const config = {
+  memory: 1024,
+  maxDuration: 5,
+};
+
+const reader = createReader('', configKeystatic);
 
 const getPostData = async () => {
   const postSlugs = await reader.collections.posts.list();

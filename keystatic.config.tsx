@@ -79,7 +79,34 @@ export default config({
             itemLabel: (props) => props?.value || 'Выберите вакцину',
           },
         ),
-
+        vaccination_scheme: fields.document({
+          formatting: true,
+          dividers: true,
+          links: true,
+          layouts: [
+            [1, 1],
+            [1, 1, 1],
+            [2, 1],
+            [1, 2],
+            [1, 2, 1],
+          ],
+          label: 'Схема вакцинации',
+          // componentBlocks: ComponentBlocks,
+        }),
+        schedule_disrupted: fields.document({
+          formatting: true,
+          dividers: true,
+          links: true,
+          layouts: [
+            [1, 1],
+            [1, 1, 1],
+            [2, 1],
+            [1, 2],
+            [1, 2, 1],
+          ],
+          label: 'Нарушен график',
+          // componentBlocks: ComponentBlocks,
+        }),
         contraindications: fields.document({
           formatting: true,
           dividers: true,

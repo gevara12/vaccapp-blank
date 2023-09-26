@@ -19,8 +19,7 @@
   },
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "postinstall": "touch .env"
+    "build": "next build"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",
